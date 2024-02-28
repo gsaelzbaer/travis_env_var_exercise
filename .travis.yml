@@ -15,7 +15,7 @@ before_script:
 
 script:
   - docker --version # print the version for logging
-  - docker build -t travis_env_var_exercise .
+  - docker build -t travis_env_var_exercise --build-arg ROCKS=${ROCKS} .
   - docker tag travis_env_var_exercise quantumleech/travis_env_var_exercise:latest
 
 # Tasks to perform after the process is successful. Formatting the Docker username and password as below enables you to programmatically log in without having the password exposed in logs.
